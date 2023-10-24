@@ -1,0 +1,15 @@
+.filter {
+  font-weight: bold;
+}
+
+.filter-box {
+  border-bottom: medium solid #20247c;;
+}
+
+.filter-icon {
+  margin-top: 1rem;;
+}
+
+.results-box > div > div > img {
+  width: 100%;
+}
