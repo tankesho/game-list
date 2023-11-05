@@ -11,6 +11,8 @@ import { IntroComponent } from './intro/intro.component';
 import { ListComponent } from './list/list.component';
 import { GameComponent } from './game/game.component';
 import { SearchComponent } from './search/search.component';
+import { GameContainerComponent } from './list/game-container/game-container.component';
+import { AddGameFormComponent } from './game/add-game-form/add-game-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SearchComponent } from './search/search.component';
     IntroComponent,
     ListComponent,
     GameComponent,
-    SearchComponent
+    SearchComponent,
+    GameContainerComponent,
+    AddGameFormComponent
   ],
   imports: [
     BrowserModule,
