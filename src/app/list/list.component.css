@@ -76,11 +76,6 @@
   height: 25rem;
 }
 
-.scroll-item {
-  display: inline-block;
-  padding: 1rem;
-}
-
 .status-title {
   border: thick solid #20247c;
   margin-top: 0.5rem;
@@ -105,14 +100,6 @@
 
 .status-scroll-box {
   margin-top: 2rem;
-}
-
-.scroll-image {
-  height: 19rem;
-}
-
-.scroll-item > p {
-  margin-bottom: 0;
 }
 
 ::-webkit-scrollbar {

@@ -1,0 +1,57 @@
+.add-game {
+  width: 50%
+}
+
+.category-div {
+  margin-bottom: 1rem;
+}
+
+.select-cust {
+  background-color: white;
+  border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
+  padding-left: 0.5rem;
+  border: medium solid #20247c;
+  width: 60%;
+}
+
+.score-div {
+  margin-bottom: 3rem;
+}
+
+.checkbox-div {
+  min-height: 3.5rem;
+}
+
+.form-div {
+  border-left: thick solid #20247c;
+  padding: 1rem;
+  margin-bottom: 1rem;;
+}
+
+.add-buttom {
+  width: 100%;
+}
+
+textarea {
+  background-color: white;
+  border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border: medium solid #20247c;
+  width: 100%;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #20247c;
+}
+
+input[type="number"] {
+  background-color: white;
+  border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border: medium solid #20247c;
+  width: 40%;
+}
