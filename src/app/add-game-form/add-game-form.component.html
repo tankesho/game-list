@@ -1,0 +1,55 @@
+<div class="add-game form-div indigo lighten-4 container">
+  <h1>Adicionar a lista.</h1>
+  <div class="row">
+    <div class="col s8">
+      <div class="category-div">
+        <label>Categoria</label>
+        <div class="select-cust">
+          <select>
+            <option value="" disabled selected>-</option>
+            <option value="playing">Jogando</option>
+            <option value="played">Zerado</option>
+            <option value="on-hold">Em espera</option>
+            <option value="dropped">Droppado</option>
+            <option value="plan-to-play">Planejo jogar</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="hours-played">Horas jogadas</label><br>
+        <input id="hours-played" type="number" class="validate">
+      </div>
+    </div>
+    <div class="col s4">
+      <div class="score-div">
+        <label>Nota</label>
+        <div class="select-cust">
+          <select>
+            <option value="" disabled selected>-</option>
+            <option value="10">10</option>
+            <option value="9">9</option>
+            <option value="8">8</option>
+            <option value="7">7</option>
+            <option value="6">6</option>
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+            <option value="0">0</option>
+          </select>
+        </div>
+      </div>
+      <div class="checkbox-div">
+          <label>
+            <input type="checkbox" />
+            <span>Favorito</span>
+          </label>
+      </div>
+    </div>
+    <div>
+      <label for="comment">Comentário</label>
+      <textarea id="comment" class="center-align materialize-textarea"></textarea>
+    </div>
+    <button class="btn waves-effect waves-light indigo darken-4 col12 add-buttom" type="submit" (click)="addGame('Placeholder')" name="action">Adicionar jogo</button>
+  </div>

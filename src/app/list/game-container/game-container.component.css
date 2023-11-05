@@ -1,0 +1,21 @@
+.scroll-image {
+  height: 19rem;
+}
+
+.scroll-item > p {
+  margin-bottom: 0;
+}
+
+.scroll-item {
+  display: inline-block;
+  padding: 1rem;
+}
+
+.text-over {
+  margin-top: -45%;
+}
+
+.text-over > p {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}

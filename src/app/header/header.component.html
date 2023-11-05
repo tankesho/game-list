@@ -1,7 +1,7 @@
 <nav>
   <div class="nav-wrapper indigo darken-4 row">
     <div class="col s7">
-      <a href="" class="brand-logo valign-wrapper">
+      <a routerLink="" class="brand-logo valign-wrapper">
         <img class="my-logo" src="/assets/resources/images/logo.png">
       </a>
     </div>
@@ -12,7 +12,7 @@
             <input placeholder="Pesquise por um jogo" id="search" type="text" class="validate">
             <label for="search"></label>
           </div>
-          <button class="col s3 btn-large indigo lighten-4" type="submit" name="action">
+          <button class="col s3 btn-large indigo lighten-4" type="submit" (click)="searchQuery()" name="action">
             <p>buscar</p>
           </button>
         </div>
@@ -20,8 +20,8 @@
     </div>
     <div class="col s2">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="account-button">CRIAR CONTA</a></li>
-        <li><a class="account-button">LOGIN</a></li>
+        <li><a routerLink="sign_in" class="account-button">CRIAR CONTA</a></li>
+        <li><a routerLink="login" class="account-button">LOGIN</a></li>
         <li ><a class="account-button" [hidden]="this.hide">SUA LISTA</a></li>
       </ul>
     </div>

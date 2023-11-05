@@ -49,46 +49,6 @@
   border-bottom: thick solid white;
 }
 
-.add-game {
-  width: 50%
-}
-
-.select-cust {
-  background-color: white;
-  border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
-  padding-left: 0.5rem;
-  border: medium solid #20247c;
-  width: 80%;
-}
-
-input[type="number"] {
-  background-color: white;
-  border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
-  padding-left: 0.5rem;
-  border: medium solid #20247c;
-  width: 80%;
-}
-
-input[type="email"] {
-  background-color: white;
-  border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
-  padding-left: 0.5rem;
-  border: medium solid #20247c;
-  width: 80%;
-}
-
-label {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #20247c;
-}
-
-.form-div {
-  border-left: thick solid #20247c;
-  padding: 1rem;
-  margin-bottom: 1rem;;
-}
-
 h3 {
   color: white;
 }
@@ -100,13 +60,5 @@ h3 {
 }
 
 h1 {
-  margin-bottom: 1rem;
-}
-
-.score-div {
-  margin-bottom: 3rem;
-}
-
-.category-div {
   margin-bottom: 1rem;
 }

@@ -13,4 +13,8 @@ export class GameComponent implements AfterViewInit {
       M.FormSelect.init(elems);
     });
   }
+
+  addGame(title: string): void {
+    alert(title + ' adicionado com sucesso a sua lista!');
+  }
 }
