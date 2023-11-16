@@ -37,13 +37,9 @@ h3 {
   color: white;
 }
 
-.login-link {
+.sign-in-link {
   border-bottom: medium solid #20247c;
   color:#20247c;
   width: 15%;
   font-size: 2rem;
-}
-
-h1 {
-  margin-bottom: 1rem;
 }

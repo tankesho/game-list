@@ -6,15 +6,27 @@
       <h3 class="col s3 right-align red lighten-1">ENTRE COM SUA CONTA</h3>
     </div>
     <div class="row">
-      <form class="col s12">
+      <form class="col s12" (ngSubmit)="onLogin()">
         <div class="row">
           <div class=" col s6">
-            <label for="username">Nome de usuário</label><br>
-            <input id="username" type="text" class="validate">
+            <label for="input-username">Nome de usuário</label><br>
+            <input
+              id="input-username"
+              name="input-username"
+              type="text"
+              class="validate"
+              [(ngModel)]="this.loginUser.username"
+            />
           </div>
           <div class=" col s6">
-            <label for="password">Senha</label><br>
-            <input id="password" type="password" class="validate">
+            <label for="input-password">Senha</label><br>
+            <input
+              id="input-password"
+              name="input-password"
+              type="password"
+              class="validate"
+              [(ngModel)]="this.loginUser.password"
+            />
           </div>
         </div>
         <button class="btn waves-effect waves-light indigo darken-4 col12" type="submit" name="action">Fazer login</button>
@@ -22,6 +34,6 @@
     </div>
   </div>
   <h2>OU, SE AINDA NÃO POSSUI UMA...</h2>
-  <a routerLink="../sign_in"><h1 class="login-link">CRIE UMA CONTA</h1></a>
+  <a routerLink="../user" class="login-link">CRIE UMA CONTA</a>
 </div>
 

@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './template/footer/footer.component';
+import { HeaderComponent } from './template/header/header.component';
 import { LoginComponent } from './login/login.component';
-import { SignInComponent } from './sign-in/sign-in.component';
+import { UserComponent } from './user/user.component'
 import { IntroComponent } from './intro/intro.component';
 import { ListComponent } from './list/list.component';
 import { GameComponent } from './game/game.component';
 import { SearchComponent } from './search/search.component';
 import { GameContainerComponent } from './list/game-container/game-container.component';
-import { AddGameFormComponent } from './game/add-game-form/add-game-form.component';
+import { AddGameFormComponent } from './add-game-form/add-game-form.component';
 
 @NgModule({
   declarations: [
@@ -20,17 +21,18 @@ import { AddGameFormComponent } from './game/add-game-form/add-game-form.compone
     FooterComponent,
     HeaderComponent,
     LoginComponent,
-    SignInComponent,
+    UserComponent,
     IntroComponent,
     ListComponent,
     GameComponent,
     SearchComponent,
     GameContainerComponent,
-    AddGameFormComponent
+    AddGameFormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
