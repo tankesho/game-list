@@ -4,6 +4,7 @@
 
 .category-div {
   margin-bottom: 1rem;
+  width: 150%;
 }
 
 .select-cust {
@@ -16,6 +17,7 @@
 
 .score-div {
   margin-bottom: 3rem;
+  width: 150%;
 }
 
 .checkbox-div {

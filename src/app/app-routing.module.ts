@@ -10,10 +10,11 @@ import { GameComponent } from './game/game.component';
 const routes: Routes = [
   {path: '', component: IntroComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'user', component: UserComponent},
+  {path: 'users', component: UserComponent},
+  {path: 'users/:id', component: ListComponent},
   {path: 'search', component: SearchComponent},
-  {path: 'list/:id', component: ListComponent},
-  {path: 'game/:id', component: GameComponent}];
+  {path: 'games/:id', component: GameComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
