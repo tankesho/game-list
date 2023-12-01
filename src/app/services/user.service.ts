@@ -2,6 +2,9 @@ import { Injectable } from "@angular/core";
 import { User } from '../model/user';
 import { WebStorageUtil } from 'src/app/util/web-storage-util';
 import { Constants } from "../util/constants";
+import { Entry } from "../model/entry";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, lastValueFrom, interval, take } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +12,15 @@ import { Constants } from "../util/constants";
 
 export class UserService {
   users!: User[];
-  constructor() {
+  constructor(private httpClient: HttpClient) {
     this.users = WebStorageUtil.get(Constants.USERS_KEY);
   }
+
+  URL = 'http://localhost:3000/entries';
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
 
   save(user: User) {
     this.users = WebStorageUtil.get(Constants.USERS_KEY);
@@ -49,4 +58,8 @@ export class UserService {
     this.users = WebStorageUtil.get(Constants.USERS_KEY);
     return this.users;
    }
+
+   getEntriesByUser(id: number): Promise<Entry[]> {
+    return lastValueFrom(this.httpClient.get<Entry[]>(this.URL + '?userId_like=' + id))
+  }
 }

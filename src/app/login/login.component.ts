@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: LoginService) {}
 
   ngOnInit(): void {
-    this.loginUser = new User('', '');
+    this.loginUser = new User(Math.round(Math.random() * 1000), '', '');
     this.user = WebStorageUtil.get(Constants.USERNAME_KEY);
   }
 
