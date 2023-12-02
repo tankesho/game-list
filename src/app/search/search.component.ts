@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Game } from '../model/game';
+import { Constants } from '../util/constants';
+import { WebStorageUtil } from '../util/web-storage-util';
 
 @Component({
   selector: 'app-search',
@@ -7,13 +10,21 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  img = 'placeholder.jpg';
 
+  constructor(private route: ActivatedRoute) {}
+
+  games!: Game[];
   search = '';
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      this.search = params['search'];
-    })
+    this.games = WebStorageUtil.get(Constants.GAMES_KEY);
+  }
+
+  ngAfterViewInit(): void {
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems);
+    });
   }
 }

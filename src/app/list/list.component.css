@@ -73,12 +73,14 @@
 .scroll {
   overflow: auto;
   white-space: nowrap;
-  height: 25rem;
+}
+
+.scroll-item {
+  display: inline-block;
 }
 
 .status-title {
-  border: thick solid #20247c;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
 }
 
 .status-icon {
@@ -116,4 +118,8 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #adb0dc;
+}
+
+a:hover {
+  cursor: pointer;
 }
