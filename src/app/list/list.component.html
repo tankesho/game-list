@@ -3,154 +3,106 @@
     <h1 class="title col s12 center-align">Lista de tankesho</h1>
   </div>
   <div class="status-box indigo lighten-4">
-    <div class="bar row">
-      <div class="green-bar col s1"></div>
-      <div class="blue-bar col s5"></div>
-      <div class="yellow-bar col s2"></div>
-      <div class="red-bar col s1"></div>
-      <div class="orange-bar col s3"></div>
-    </div>
     <div class="below-box row">
       <div class="col s6 status-box-left">
         <div class="row status-line">
-          <a href=""><img class="col s1" src="/assets/resources/images/playing-icon.png"><h3 class="list-link col s9">Jogando</h3><h3 class="list-link col s2">12</h3></a>
+          <a (click)="scroll(playingDiv)"><img class="col s1" src="/assets/resources/images/playing-icon.png"><h3 class="list-link col s9">Jogando</h3><h3 class="list-link col s2">{{ this.gameCount[0] }}</h3></a>
         </div>
         <div class="row status-line">
-          <a href=""><img class="col s1" src="/assets/resources/images/played-icon.png"><h3 class="list-link col s9">Zerados</h3><h3 class="list-link col s2">36</h3></a>
+          <a (click)="scroll(playedDiv)"><img class="col s1" src="/assets/resources/images/played-icon.png"><h3 class="list-link col s9">Zerados</h3><h3 class="list-link col s2">{{ this.gameCount[1] }}</h3></a>
         </div>
         <div class="row status-line">
-          <a href=""><img class="col s1" src="/assets/resources/images/on-hold-icon.png"><h3 class="list-link col s9">Em espera</h3><h3 class="list-link col s2">24</h3></a>
+          <a (click)="scroll(onHoldDiv)"><img class="col s1" src="/assets/resources/images/on-hold-icon.png"><h3 class="list-link col s9">Em espera</h3><h3 class="list-link col s2">{{ this.gameCount[2] }}</h3></a>
         </div>
         <div class="row status-line">
-          <a href=""><img class="col s1" src="/assets/resources/images/dropped-icon.png"><h3 class="list-link col s9">Droppados</h3><h3 class="list-link col s2">12</h3></a>
+          <a (click)="scroll(droppedDiv)"><img class="col s1" src="/assets/resources/images/dropped-icon.png"><h3 class="list-link col s9">Droppados</h3><h3 class="list-link col s2">{{ this.gameCount[3] }}</h3></a>
         </div>
         <div class="row status-line">
-          <a href=""><img class="col s1" src="/assets/resources/images/plan-to-play-icon.png"><h3 class="list-link col s9">Planejo jogar</h3><h3 class="list-link col s2">36</h3></a>
+          <a (click)="scroll(planToPlayDiv)"><img class="col s1" src="/assets/resources/images/plan-to-play-icon.png"><h3 class="list-link col s9">Planejo jogar</h3><h3 class="list-link col s2">{{ this.gameCount[4] }}</h3></a>
         </div>
       </div>
       <div class="col s6">
         <div>
-          <a href=""><h3 class="list-link col s10">Horas totais</h3><h3 class="list-link col s2">2455,5</h3></a>
+          <h3 class="list-link col s10">Horas totais</h3><h3 class="list-link col s2">{{ this.totalHours }}</h3>
         </div>
         <div>
-          <a href=""><h3 class="list-link col s10">Média de notas</h3><h3 class="list-link col s2">7,5</h3></a>
+          <h3 class="list-link col s10">Média de notas</h3><h3 class="list-link col s2">{{ this.averageScore }}</h3>
         </div>
         <div>
-          <a href=""><h3 class="list-link col s10">Favoritos</h3><h3 class="list-link col s2">9</h3></a>
-        </div>
-        <div>
-          <a href=""><h3 class="list-link col s10">Jogos ao total</h3><h3 class="list-link col s2">120</h3></a>
-        </div>
-        <div>
-          <a href=""><h3 class="btn waves-effect waves-light indigo darken-4 col12 button-full-list">Ver lista completa</h3></a>
+         <h3 class="list-link col s10">Jogos ao total</h3><h3 class="list-link col s2">{{ this.gameCount[5] }}</h3>
         </div>
       </div>
     </div>
   </div>
   <div class="lists-box">
-    <div class="status-scroll-box">
+    <div #playingDiv class="status-scroll-box">
       <div class="row status-header">
         <div class="col s1">
           <img class="status-icon" src="/assets/resources/images/playing-icon.png">
         </div>
         <h3 class="status-title col s2">JOGANDO</h3>
-        <h3 class="col s7 status-details right-align">12 jogos na categoria.</h3>
-        <a class="col s2 status-button right-align" href=""><h3 class="btn waves-effect waves-light indigo darken-4 button-full-list">Ver mais</h3></a>
+        <h3 class="col s7 status-details right-align">{{ this.gameCount[0] }} jogos na categoria.</h3>
       </div>
       <div class="scroll">
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
+        <div class="scroll-item" *ngFor="let e of entries">
+          <app-game-container [routerLink]="['../../games/', e.gameId]" *ngIf="e.category == 1" [title]="this.games[e.gameId].title" [img]="this.img" [score]="e.score"></app-game-container>
+        </div>
       </div>
     </div>
-    <div class="status-scroll-box">
+    <div #playedDiv class="status-scroll-box">
       <div class="row status-header">
         <div class="col s1">
           <img class="status-icon" src="/assets/resources/images/played-icon.png">
         </div>
         <h3 class="status-title col s2">ZERADOS</h3>
-        <h3 class="col s7 status-details right-align">35 jogos na categoria.</h3>
-        <a class="col s2 status-button right-align" href=""><h3 class="btn waves-effect waves-light indigo darken-4 button-full-list">Ver mais</h3></a>
+        <h3 class="col s7 status-details right-align">{{ this.gameCount[1] }} jogos na categoria.</h3>
       </div>
       <div class="scroll">
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
+        <div class="scroll-item" *ngFor="let e of entries">
+          <app-game-container [routerLink]="['../../games/', e.gameId]" *ngIf="e.category == 2" [title]="this.games[e.gameId].title" [img]="this.img" [score]="e.score"></app-game-container>
+        </div>
       </div>
     </div>
-    <div class="status-scroll-box">
+    <div #onHoldDiv class="status-scroll-box">
       <div class="row status-header">
         <div class="col s1">
           <img class="status-icon" src="/assets/resources/images/on-hold-icon.png">
         </div>
         <h3 class="status-title col s2">EM ESPERA</h3>
-        <h3 class="col s7 status-details right-align">36 jogos na categoria.</h3>
-        <a class="col s2 status-button right-align" href=""><h3 class="btn waves-effect waves-light indigo darken-4 button-full-list">Ver mais</h3></a>
+        <h3 class="col s7 status-details right-align">{{ this.gameCount[2] }} jogos na categoria.</h3>
       </div>
       <div class="scroll">
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
+        <div class="scroll-item" *ngFor="let e of entries">
+          <app-game-container [routerLink]="['../../games/', e.gameId]" *ngIf="e.category == 3" [title]="this.games[e.gameId].title" [img]="this.img" [score]="e.score"></app-game-container>
+        </div>
       </div>
     </div>
-    <div class="status-scroll-box">
+    <div #droppedDiv class="status-scroll-box">
       <div class="row status-header">
         <div class="col s1">
           <img class="status-icon" src="/assets/resources/images/dropped-icon.png">
         </div>
         <h3 class="status-title col s2">DROPPADOS</h3>
-        <h3 class="col s7 status-details right-align">12 jogos na categoria.</h3>
-        <a class="col s2 status-button right-align" href=""><h3 class="btn waves-effect waves-light indigo darken-4 button-full-list">Ver mais</h3></a>
+        <h3 class="col s7 status-details right-align">{{ this.gameCount[3] }} jogos na categoria.</h3>
       </div>
       <div class="scroll">
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
+        <div class="scroll-item" *ngFor="let e of entries">
+          <app-game-container [routerLink]="['../../games/', e.gameId]" *ngIf="e.category == 4" [title]="this.games[e.gameId].title" [img]="this.img" [score]="e.score"></app-game-container>
+        </div>
       </div>
     </div>
-    <div class="status-scroll-box">
+    <div #planToPlayDiv class="status-scroll-box">
       <div class="row status-header">
         <div class="col s1">
           <img class="status-icon" src="/assets/resources/images/plan-to-play-icon.png">
         </div>
         <h3 class="status-title col s3">PLANEJO JOGAR</h3>
-        <h3 class="col s6 status-details right-align">36 jogos na categoria.</h3>
-        <a class="col s2 status-button right-align" href=""><h3 class="btn waves-effect waves-light indigo darken-4 button-full-list">Ver mais</h3></a>
+        <h3 class="col s6 status-details right-align">{{ this.gameCount[4] }} jogos na categoria.</h3>
       </div>
       <div class="scroll">
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
-        <app-game-container [title]="this.title" [img]="this.img" [score]="this.score"></app-game-container>
+        <div class="scroll-item" *ngFor="let e of entries">
+          <app-game-container [routerLink]="['../../games/', e.gameId]" *ngIf="e.category == 5" [title]="this.games[e.gameId].title" [img]="this.img" [score]="e.score"></app-game-container>
+        </div>
       </div>
     </div>
   </div>

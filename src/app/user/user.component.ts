@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Shared } from '../util/shared';
 import { User } from './../model/user';
@@ -26,7 +26,7 @@ export class UserComponent {
 
   ngOnInit() {
     Shared.initializeWebStorage();
-    this.user = new User('', '');
+    this.user = new User(Math.round(Math.random() * 1000), '', '');
     this.users = this.userService.getUsers();
   }
 
@@ -41,7 +41,7 @@ export class UserComponent {
     this.isSuccess = true;
     this.message = 'Conta criada com sucesso!';
     this.form.reset;
-    this.user = new User('', '');
+    this.user = new User(Math.round(Math.random() * 1000), '', '');
     this.users = this.userService.getUsers();
   }
 

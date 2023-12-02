@@ -14,6 +14,7 @@ import { GameComponent } from './game/game.component';
 import { SearchComponent } from './search/search.component';
 import { GameContainerComponent } from './list/game-container/game-container.component';
 import { AddGameFormComponent } from './add-game-form/add-game-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,12 @@ import { AddGameFormComponent } from './add-game-form/add-game-form.component';
     GameComponent,
     SearchComponent,
     GameContainerComponent,
-    AddGameFormComponent,
-  ],
+    AddGameFormComponent,  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
