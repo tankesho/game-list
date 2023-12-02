@@ -6,19 +6,19 @@
     <div class="below-box row">
       <div class="col s6 status-box-left">
         <div class="row status-line">
-          <a (click)="scroll(playingDiv)"><img class="col s1" src="/assets/resources/images/playing-icon.png"><h3 class="list-link col s9">Jogando</h3><h3 class="list-link col s2">{{ this.gameCount[0] }}</h3></a>
+          <a (click)="scroll(playingDiv)"><img class="col s1" src="assets/resources/images/playing-icon.png"><h3 class="list-link col s9">Jogando</h3><h3 class="list-link col s2">{{ this.gameCount[0] }}</h3></a>
         </div>
         <div class="row status-line">
-          <a (click)="scroll(playedDiv)"><img class="col s1" src="/assets/resources/images/played-icon.png"><h3 class="list-link col s9">Zerados</h3><h3 class="list-link col s2">{{ this.gameCount[1] }}</h3></a>
+          <a (click)="scroll(playedDiv)"><img class="col s1" src="assets/resources/images/played-icon.png"><h3 class="list-link col s9">Zerados</h3><h3 class="list-link col s2">{{ this.gameCount[1] }}</h3></a>
         </div>
         <div class="row status-line">
-          <a (click)="scroll(onHoldDiv)"><img class="col s1" src="/assets/resources/images/on-hold-icon.png"><h3 class="list-link col s9">Em espera</h3><h3 class="list-link col s2">{{ this.gameCount[2] }}</h3></a>
+          <a (click)="scroll(onHoldDiv)"><img class="col s1" src="assets/resources/images/on-hold-icon.png"><h3 class="list-link col s9">Em espera</h3><h3 class="list-link col s2">{{ this.gameCount[2] }}</h3></a>
         </div>
         <div class="row status-line">
-          <a (click)="scroll(droppedDiv)"><img class="col s1" src="/assets/resources/images/dropped-icon.png"><h3 class="list-link col s9">Droppados</h3><h3 class="list-link col s2">{{ this.gameCount[3] }}</h3></a>
+          <a (click)="scroll(droppedDiv)"><img class="col s1" src="assets/resources/images/dropped-icon.png"><h3 class="list-link col s9">Droppados</h3><h3 class="list-link col s2">{{ this.gameCount[3] }}</h3></a>
         </div>
         <div class="row status-line">
-          <a (click)="scroll(planToPlayDiv)"><img class="col s1" src="/assets/resources/images/plan-to-play-icon.png"><h3 class="list-link col s9">Planejo jogar</h3><h3 class="list-link col s2">{{ this.gameCount[4] }}</h3></a>
+          <a (click)="scroll(planToPlayDiv)"><img class="col s1" src="assets/resources/images/plan-to-play-icon.png"><h3 class="list-link col s9">Planejo jogar</h3><h3 class="list-link col s2">{{ this.gameCount[4] }}</h3></a>
         </div>
       </div>
       <div class="col s6">
@@ -38,7 +38,7 @@
     <div #playingDiv class="status-scroll-box">
       <div class="row status-header">
         <div class="col s1">
-          <img class="status-icon" src="/assets/resources/images/playing-icon.png">
+          <img class="status-icon" src="assets/resources/images/playing-icon.png">
         </div>
         <h3 class="status-title col s2">JOGANDO</h3>
         <h3 class="col s7 status-details right-align">{{ this.gameCount[0] }} jogos na categoria.</h3>
@@ -52,7 +52,7 @@
     <div #playedDiv class="status-scroll-box">
       <div class="row status-header">
         <div class="col s1">
-          <img class="status-icon" src="/assets/resources/images/played-icon.png">
+          <img class="status-icon" src="assets/resources/images/played-icon.png">
         </div>
         <h3 class="status-title col s2">ZERADOS</h3>
         <h3 class="col s7 status-details right-align">{{ this.gameCount[1] }} jogos na categoria.</h3>
@@ -66,7 +66,7 @@
     <div #onHoldDiv class="status-scroll-box">
       <div class="row status-header">
         <div class="col s1">
-          <img class="status-icon" src="/assets/resources/images/on-hold-icon.png">
+          <img class="status-icon" src="assets/resources/images/on-hold-icon.png">
         </div>
         <h3 class="status-title col s2">EM ESPERA</h3>
         <h3 class="col s7 status-details right-align">{{ this.gameCount[2] }} jogos na categoria.</h3>
@@ -80,7 +80,7 @@
     <div #droppedDiv class="status-scroll-box">
       <div class="row status-header">
         <div class="col s1">
-          <img class="status-icon" src="/assets/resources/images/dropped-icon.png">
+          <img class="status-icon" src="assets/resources/images/dropped-icon.png">
         </div>
         <h3 class="status-title col s2">DROPPADOS</h3>
         <h3 class="col s7 status-details right-align">{{ this.gameCount[3] }} jogos na categoria.</h3>
@@ -94,7 +94,7 @@
     <div #planToPlayDiv class="status-scroll-box">
       <div class="row status-header">
         <div class="col s1">
-          <img class="status-icon" src="/assets/resources/images/plan-to-play-icon.png">
+          <img class="status-icon" src="assets/resources/images/plan-to-play-icon.png">
         </div>
         <h3 class="status-title col s3">PLANEJO JOGAR</h3>
         <h3 class="col s6 status-details right-align">{{ this.gameCount[4] }} jogos na categoria.</h3>

@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href=/game-list/",
+    "ghpages": "angular-cli-ghpages --dir=dist/game-list --repo=https://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@github.com/tankesho/game-list.git --name=tankesho --email=takeoga@hotmail.com",
+    "deploy": "npm run build & npm run ghpages",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "json:server": "json-server --watch db.json",

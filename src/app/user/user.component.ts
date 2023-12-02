@@ -25,7 +25,6 @@ export class UserComponent {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    Shared.initializeWebStorage();
     this.user = new User(Math.round(Math.random() * 1000), '', '');
     this.users = this.userService.getUsers();
   }

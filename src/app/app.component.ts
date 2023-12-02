@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Shared } from './util/shared';
 
 
 @Component({
@@ -8,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'game-list';
+
+  ngOnInit() {
+    Shared.initializeWebStorage();
+  }
 }
