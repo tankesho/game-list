@@ -1,4 +1,8 @@
-<div class="row">
+<div [hidden]="this.logged">
+  <h2>VOCÊ PRECISA ESTAR LOGADO PARA ADICIONAR JOGOS A SUA LISTA!</h2>
+  <a routerLink="../../login" class="sign-in-link">FAÇA LOGIN</a>
+</div>
+<div class="row" [hidden]="!this.logged">
   <div
     id="msg-sign-in"
     class="card-panel white-text"
@@ -16,7 +20,7 @@
         <div class="category-div">
           <label>Categoria</label>
           <div>
-            <select [(ngModel)]="this.category" name="input-category" class="select-cust browser-default">
+            <select [(ngModel)]="this.entry.category" name="input-category" class="select-cust browser-default">
               <option value="-" disabled>-</option>
               <option value="1">Jogando</option>
               <option value="2">Zerado</option>
@@ -28,7 +32,7 @@
         </div>
         <div>
           <label for="hours-played">Horas jogadas</label><br>
-          <input [(ngModel)]="this.hoursPlayed" value="{{this.hoursPlayed}}" name="input-hoursPlayed" id="hours-played" type="number" class="validate">
+          <input [(ngModel)]="this.entry.hoursPlayed" value="{{this.entry.hoursPlayed}}" name="input-hoursPlayed" id="hours-played" type="number" class="validate">
         </div>
       </div>
       <div class="col s4">
@@ -36,21 +40,21 @@
           <label>Nota</label>
           <div>
             <select
-              [(ngModel)]="this.score"
+              [(ngModel)]="this.entry.score"
               name="input-score"
               class="select-cust browser-default">
-              <option value="-" disabled [selected]="!this.score">-</option>
-              <option value="10" [selected]="this.score==10">10</option>
-              <option value="9" [selected]="this.score==9">9</option>
-              <option value="8" [selected]="this.score==8">8</option>
-              <option value="7" [selected]="this.score==7">7</option>
-              <option value="6" [selected]="this.score==6">6</option>
-              <option value="5" [selected]="this.score==5">5</option>
-              <option value="4" [selected]="this.score==4">4</option>
-              <option value="3" [selected]="this.score==3">3</option>
-              <option value="2" [selected]="this.score==2">2</option>
-              <option value="1" [selected]="this.score==1">1</option>
-              <option value="0" [selected]="this.score==0">0</option>
+              <option value="-" disabled [selected]="!this.entry.score">-</option>
+              <option value="10" [selected]="this.entry.score==10">10</option>
+              <option value="9" [selected]="this.entry.score==9">9</option>
+              <option value="8" [selected]="this.entry.score==8">8</option>
+              <option value="7" [selected]="this.entry.score==7">7</option>
+              <option value="6" [selected]="this.entry.score==6">6</option>
+              <option value="5" [selected]="this.entry.score==5">5</option>
+              <option value="4" [selected]="this.entry.score==4">4</option>
+              <option value="3" [selected]="this.entry.score==3">3</option>
+              <option value="2" [selected]="this.entry.score==2">2</option>
+              <option value="1" [selected]="this.entry.score==1">1</option>
+              <option value="0" [selected]="this.entry.score==0">0</option>
             </select>
           </div>
         </div>

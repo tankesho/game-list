@@ -73,7 +73,6 @@
 .scroll {
   overflow: auto;
   white-space: nowrap;
-  height: 25rem;
 }
 
 .scroll-item {
@@ -81,8 +80,7 @@
 }
 
 .status-title {
-  border: thick solid #20247c;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
 }
 
 .status-icon {

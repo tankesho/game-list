@@ -4,6 +4,8 @@ import { NgForm } from '@angular/forms';
 import { Entry } from '../model/entry';
 import { Game } from '../model/game';
 import { Router } from '@angular/router';
+import { WebStorageUtil } from '../util/web-storage-util';
+import { Constants } from '../util/constants';
 
 @Component({
   selector: 'app-add-game-form',
@@ -12,19 +14,12 @@ import { Router } from '@angular/router';
 })
 export class AddGameFormComponent {
   @ViewChild('form') form!: NgForm;
-  @Output() addGameEvent = new EventEmitter<string>();
 
-  @Input() id!: number;
-  @Input() category!: number;
-  @Input() score!: number;
-  @Input() hoursPlayed!: number;
-  @Input() favorite!: boolean;
   @Input() game!: Game;
-  @Input() gameId!: number;
-  @Input() userId!: number;
+  @Input() entry!: Entry;
+  userId = WebStorageUtil.get(Constants.USERNAME_KEY).id;
   submit!: string;
-
-  entry!: Entry;
+  logged!: boolean
 
   isSubmitted!: boolean;
   isShowMessage: boolean = false;
@@ -36,16 +31,26 @@ export class AddGameFormComponent {
     private router: Router
     ) {}
 
-  submitType(type: string): void {
-    this.submit = type;
+  ngOnInit() {
+    this.logged = WebStorageUtil.get(Constants.LOGGED_IN_KEY);
+    let userId = WebStorageUtil.get(Constants.USERNAME_KEY).id;
+    this.entryService
+      .getEntryByUserAndGame(userId, this.game.id)
+      .then((e: Entry[]) => {
+        this.entry = e[0];
+
+        if (this.entry === undefined)
+          this.entry = new Entry(Math.round(Math.random() * 1000), 1, 0, 0, this.game.id, userId);
+      })
+      .catch(() => {
+        alert("Desculpe, não foi possível resgatar as informações da sua lista!")
+      })
   }
 
-
   ngOnSubmit() {
-    this.entry = new Entry(this.id, this.category, this.hoursPlayed, this.score, this.gameId, this.userId);
-    if (this.entryService.isValid(this.userId)) {
-      if (!this.entryService.isExist(this.userId, this.gameId)) {
-        console.log("asasasas")
+    if (this.logged) {
+      let exists = this.entryService.isExist(this.userId, this.game.id) === false
+      if (!exists) {
         this.entryService.save(this.entry)
         .then(() => {
           this.isSuccess = true;
@@ -73,8 +78,7 @@ export class AddGameFormComponent {
   }
 
   onDelete() {
-    this.entry = new Entry(this.id, this.category, this.hoursPlayed, this.score, this.gameId, this.userId);
-    if (this.entryService.isValid(this.userId)) {
+    if (this.logged) {
       let confirmation = window.confirm(
         'Quer mesmo remover o jogo de sua lista?'
       );
@@ -86,7 +90,7 @@ export class AddGameFormComponent {
         this.isSuccess = true;
         this.message = 'Jogo removido sua lista com sucesso com sucesso!';
       })
-      .catch((e) => {
+      .catch(() => {
         this.isSuccess = false;
         this.message = 'Ocorreu um erro na operação, tente novamente mais tarde.!';
       })

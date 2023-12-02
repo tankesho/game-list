@@ -44,13 +44,6 @@
     </div>
   </div>
   <app-add-game-form
-    [id]="this.entry.id"
-    [category]="this.entry.category"
-    [score]="this.entry.score"
-    [hoursPlayed]="this.entry.hoursPlayed"
-    [gameId]="this.entry.gameId"
-    [userId]="this.entry.userId"
-    [game]="this.game"
-    (addGameEvent)="addGame($event)">
+    [game]="this.game">
   </app-add-game-form>
 </div>

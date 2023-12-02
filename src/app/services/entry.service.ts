@@ -32,7 +32,7 @@ export class EntryService {
           'Por favor insira um valor maior que 0 no campo');
       }
       setTimeout(() => {
-        this.httpClient.post<Entry>(this.URL + '/' + entry.id, JSON.stringify(entry), this.httpOptions)
+        lastValueFrom(this.httpClient.post<Entry>(this.URL, JSON.stringify(entry), this.httpOptions));
         resolve(entry);
       }, 3000);
     });
@@ -62,7 +62,7 @@ export class EntryService {
   delete(entry: Entry) {
     const p = new Promise<Entry>((resolve) => {
     setTimeout(() => {
-      lastValueFrom(this.httpClient.delete<Entry>(this.URL + "/" + entry.gameId, this.httpOptions));
+      lastValueFrom(this.httpClient.delete<Entry>(this.URL + "/" + entry.id, this.httpOptions));
       resolve(entry);
     }, 3000);
     });
@@ -71,14 +71,14 @@ export class EntryService {
   }
 
   isExist(userId: number, gameId: number): boolean {
-    if (this.httpClient.get<Entry[]>(this.URL + '?userId_like=' + userId + '&gameId_like=' + gameId))
-      return true;
-    console.log("asasasas")
+    lastValueFrom(this.httpClient.get<Entry[]>(this.URL + '?userId_like=' + userId + '&gameId_like=' + gameId))
+      .then((e: Entry[]) => {
+        return e[0].userId === userId
+      })
+      .catch(() => {
+        return false;
+    })
     return false;
-  }
-
-  isValid(userId: number) {
-    return userId == WebStorageUtil.get(Constants.USERNAME_KEY).id;
   }
 
   getEntryByUserAndGame(userId: number, gameId: number): Promise<Entry[]> {

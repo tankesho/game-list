@@ -34,9 +34,9 @@
     },
     {
       "id": 2,
-      "category": "3",
+      "category": "1",
       "hoursPlayed": 50,
-      "score": 7,
+      "score": "10",
       "userId": 0,
       "gameId": 2
     },

@@ -13,3 +13,7 @@
 .results-box > div > div > img {
   width: 100%;
 }
+
+.search-container {
+  display: inline-block;
+}
