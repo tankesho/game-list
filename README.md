@@ -48,7 +48,7 @@ RA6 - Realizar requisições assíncronas para serviços web, compreendendo os p
 RA7 - Efetuar o build e deploy da aplicação em ambientes de produção.
 
 - [x] ID23: Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
-- [ ] ID24: O aluno planejou, configurou e executou o processo de build da aplicação, preparando-a para produção e realizou o deploy em um ambiente de hospedagem, tornando-a prontamente acessível para uso.
+- [x] ID24: O aluno planejou, configurou e executou o processo de build da aplicação, preparando-a para produção e realizou o deploy em um ambiente de hospedagem, tornando-a prontamente acessível para uso.
 
 RA8 - Gerenciar o código-fonte de maneira eficiente, implementar boas práticas de controle de versão e colaborar em projetos de desenvolvimento.
 - [x] ID25: O aluno criou um repositório no GitHub utilizando a estrutura do Gitflow, estabelecendo as branches "main" e "develop", demonstrando proficiência em boas práticas de controle de versão e organização do projeto.
