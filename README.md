@@ -1,6 +1,7 @@
 # Gamelist
 O sistema listará e registrará novos jogos na tabela e cada item apresentará diversas colunas como: tempo jogado, gênero, avaliação, etc.
-Link de acesso: https://tankesho.github.io/game-list/
+Link de acesso ao site: https://tankesho.github.io/game-list/
+Link de acesso ao relatório do projeto: https://docs.google.com/document/d/1rheu-MuofJzp_OGndoXCuB4-7pPcYrGU_w8xVWT8DJY/edit?usp=sharing
 
 # Protótipo de telas
 https://www.figma.com/file/MZf5TGmsotKKpKlrMAMiHW/game-list?type=design&node-id=0%3A1&mode=design&t=gPDVAmLo6Vfz9g5Y-1
