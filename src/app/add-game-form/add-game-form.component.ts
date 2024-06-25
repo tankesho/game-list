@@ -47,9 +47,10 @@ export class AddGameFormComponent {
       })
   }
 
-  ngOnSubmit() {
+  async ngOnSubmit() {
     if (this.logged) {
-      let exists = this.entryService.isExist(this.userId, this.game.id) === false
+      let exists = await this.entryService.isExist(this.userId, this.game.id);
+
       if (!exists) {
         this.entryService.save(this.entry)
         .then(() => {
@@ -59,7 +60,11 @@ export class AddGameFormComponent {
         .catch((e) => {
           this.isSuccess = false;
           this.message = e;
-        });
+        })
+        .finally(() => {
+          this.isShowMessage = true;
+          this.form.reset;
+        });;
       } else {
         this.entryService.update(this.entry)
         .then(() => {

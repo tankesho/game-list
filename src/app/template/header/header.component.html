@@ -9,12 +9,12 @@
     <div id="nav-mobile" class="right hide-on-med-and-down">
       <ul>
         <div *ngIf="!this.logged">
-          <li><a routerLink="search" class="account-button">JOGOS</a></li>
+          <li><a routerLink="games" class="account-button">JOGOS</a></li>
           <li><a routerLink="users" class="account-button">CRIAR CONTA</a></li>
           <li><a routerLink="login" class="account-button">LOGIN</a></li>
         </div>
         <div *ngIf="this.logged">
-          <li><a routerLink="search" class="account-button">JOGOS</a></li>
+          <li><a routerLink="games" class="account-button">JOGOS</a></li>
           <li ><a [routerLink]="['users', this.user]" class="account-button">SUA LISTA</a></li>
           <li>
             <a class="account-button" routerLink="users" class="flow-text" (click)="onLogout()">Sair</a>
