@@ -7,13 +7,14 @@
 }
 
 .text-over {
-  margin-top: -70%;
-  width: 160%
+  margin-top: -60%;
+  width: 164%;
+  background-color: rgb(26, 21, 95);
+  position: relative;
 }
 
 .text-over > p {
   color: white;
-  text-shadow: 2px 2px 4px #000000;
 }
 
 .scroll-item {
