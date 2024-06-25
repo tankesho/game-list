@@ -70,13 +70,15 @@ export class EntryService {
     return p;
   }
 
-  isExist = async (userId: number, gameId: number): Promise<boolean> => {
-    const e = await lastValueFrom(this.httpClient.get<Entry[]>(this.URL + '?userId_like=' + userId + '&gameId_like=' + gameId));
-    if (e.length > 0) {
-      return true;
-    } else {
-      return false;
-    }
+  isExist(userId: number, gameId: number): boolean {
+    lastValueFrom(this.httpClient.get<Entry[]>(this.URL + '?userId_like=' + userId + '&gameId_like=' + gameId))
+      .then((e: Entry[]) => {
+        return e[0].userId === userId
+      })
+      .catch(() => {
+        return false;
+    })
+    return false;
   }
 
   getEntryByUserAndGame(userId: number, gameId: number): Promise<Entry[]> {
